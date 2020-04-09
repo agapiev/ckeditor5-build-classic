@@ -45,8 +45,8 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
 
-import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize'
-import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative'
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
 
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
@@ -56,129 +56,125 @@ import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/sr
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext';
 import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
 
-
 export default class ClassicEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-  Essentials,
-  UploadAdapter,
-  Autoformat,
-  Bold,
-  Italic,
-  BlockQuote,
-  CKFinder,
-  EasyImage,
-  Heading,
-  Image,
-  ImageCaption,
-  ImageStyle,
-  ImageToolbar,
-  ImageUpload,
-  ImageResize,
-  ImageTextAlternative,
-  Indent,
-  Link,
-  List,
-  MediaEmbed,
-  Paragraph,
-  PasteFromOffice,
-  Table,
-  TableToolbar,
-  TableProperties,
-  TableCellProperties,
-  TextTransformation,
+	Essentials,
+	UploadAdapter,
+	Autoformat,
+	Bold,
+	Italic,
+	BlockQuote,
+	CKFinder,
+	EasyImage,
+	Heading,
+	Image,
+	ImageCaption,
+	ImageStyle,
+	ImageToolbar,
+	ImageUpload,
+	ImageResize,
+	ImageTextAlternative,
+	Indent,
+	Link,
+	List,
+	MediaEmbed,
+	Paragraph,
+	PasteFromOffice,
+	Table,
+	TableToolbar,
+	TableProperties,
+	TableCellProperties,
+	TextTransformation,
 
-  Underline,
-  Strikethrough,
-  Code,
-  Subscript,
-  Superscript,
+	Underline,
+	Strikethrough,
+	Code,
+	Subscript,
+	Superscript,
 
-  FontColor,
-  FontBackgroundColor,
+	FontColor,
+	FontBackgroundColor,
 
-  Alignment,
+	Alignment,
 
-  HorizontalLine,
+	HorizontalLine,
 
-  RemoveFormat,
+	RemoveFormat,
 
-  SpecialCharacters,
-  SpecialCharactersEssentials,
-  SpecialCharactersCurrency,
-  SpecialCharactersMathematical,
-  SpecialCharactersText,
+	SpecialCharacters,
+	SpecialCharactersEssentials,
+	SpecialCharactersCurrency,
+	SpecialCharactersMathematical,
+	SpecialCharactersText
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-  toolbar: {
-    items: [
-      'heading',
-      '|',
-      'alignment',
-      'bold',
-      'italic',
-      'underline',
-      'link',
-      'strikethrough',
-      'code',
-      'subscript',
-      'superscript',
-      'horizontalLine',
-      'specialcharacters',
-      'removeFormat',
-      '|',
-      'bulletedList',
-      'numberedList',
-      'indent',
-      'outdent',
-      '|',
-      'fontcolor',
-      'fontbackgroundcolor',
-      '|',
-      'imageUpload',
-      'blockQuote',
-      'insertTable',
-      'mediaEmbed',
-      'undo',
-      'redo'
-    ]
-  },
-  heading: {
-    options: [
-      { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-      { model: 'heading3', view: 'h3', title: 'Title', class: 'ck-heading_heading3' },
-      { model: 'heading4', view: 'h4', title: 'Subtitle', class: 'ck-heading_heading4' }
-    ]
-  },
-  image: {
-    toolbar: [
-      'imageStyle:alignLeft',
-      'imageStyle:full',
-      'imageStyle:alignRight',
-      '|',
-      'imageTextAlternative'
-    ],
-    styles: [
-      // This option is equal to a situation where no style is applied.
-      'full',
-      // This represents an image aligned to the left.
-      'alignLeft',
-      // This represents an image aligned to the right.
-      'alignRight'
-    ]
-  },
-  table: {
-    contentToolbar: [
-      'tableColumn',
-      'tableRow',
-      'mergeTableCells',
-      'tableProperties',
-      'tableCellProperties'
-    ],
-  },
-  // This value must be kept in sync with the language defined in webpack.config.js.
-  language: 'en'
+	toolbar: {
+		items: [
+			'heading',
+			'|',
+			'alignment',
+			'bold',
+			'italic',
+			'underline',
+			'link',
+			'strikethrough',
+			'code',
+			'subscript',
+			'superscript',
+			'horizontalLine',
+			'specialcharacters',
+			'removeFormat',
+			'|',
+			'bulletedList',
+			'numberedList',
+			'indent',
+			'outdent',
+			'|',
+			'fontcolor',
+			'fontbackgroundcolor',
+			'|',
+			'imageUpload',
+			'blockQuote',
+			'insertTable',
+			'mediaEmbed',
+			'undo',
+			'redo'
+		]
+	},
+	heading: {
+		options: [
+			{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+			{ model: 'heading3', view: 'h3', title: 'Title', class: 'ck-heading_heading3' },
+			{ model: 'heading4', view: 'h4', title: 'Subtitle', class: 'ck-heading_heading4' }
+		]
+	},
+	image: {
+		toolbar: [
+			'imageStyle:alignLeft',
+			'imageStyle:full',
+			'imageStyle:alignRight',
+			'|',
+			'imageTextAlternative'
+		],
+		styles: [
+			'full',
+			'alignLeft',
+			'alignRight'
+		]
+	},
+	table: {
+		contentToolbar: [
+			'tableColumn',
+			'tableRow',
+			'mergeTableCells',
+			'tableProperties',
+			'tableCellProperties'
+		]
+	},
+	// This value must be kept in sync with the language defined in webpack.config.js.
+	language: 'en'
 };
