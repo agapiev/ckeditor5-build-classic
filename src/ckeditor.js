@@ -28,6 +28,8 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 // import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 // import { getData } from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
 
+import CrmUploadPlugin from './crmUploadPlugin';
+
 export default class ClassicEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
@@ -54,7 +56,9 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+
+	CrmUploadPlugin
 ];
 
 // Editor configuration.
