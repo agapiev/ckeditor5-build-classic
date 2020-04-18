@@ -12,8 +12,8 @@
 ClassicEditor
   .create(document.querySelector('#editor'), {
     uploadSettings: {
-      uploadEndpoint: 'http://localhost/api/cms/files/uploadcke',
-     // uploadEndpoint: 'http://dev.reaktiv.com.mk:8080/api/cms/files/uploadcke',
+       
+      uploadEndpoint: 'http://dev.reaktiv.com.mk:8080/api/cms/files/uploadcke',
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',
         Authorization: 'Bearer <JSON Web Token>'
