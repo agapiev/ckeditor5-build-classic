@@ -28,7 +28,8 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 // import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 // import { getData } from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
 
-import CrmUploadPlugin from './crmUploadPlugin';
+import CrmUploadPlugin from './crm-upload-plugin';
+import CrmFileExplorerPlugin from './crm-file-explorer-plugin';
 
 export default class ClassicEditor extends ClassicEditorBase { }
 
@@ -58,7 +59,8 @@ ClassicEditor.builtinPlugins = [
 	TableToolbar,
 	TextTransformation,
 
-	CrmUploadPlugin
+	CrmUploadPlugin,
+	CrmFileExplorerPlugin
 ];
 
 // Editor configuration.
@@ -77,6 +79,7 @@ ClassicEditor.defaultConfig = {
 			'outdent',
 			'|',
 			'imageUpload',
+			'fileExplorer',
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
