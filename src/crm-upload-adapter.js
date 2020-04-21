@@ -57,9 +57,13 @@ export default class CrmUploadAdapter {
 
             // This example assumes the XHR server's "response" object will come with
             // an "error" which has its own "message" that can be passed to reject() in the upload promise.
-            if (!response || response.error) {
-                return reject(response && response.error ? response.error.message : genericErrorText);
-            }
+            
+            console.error('ERORR:CKEKUPLOAD',response);
+            if(response && response.message) {
+                return reject(response.message);
+            } else {
+                return reject(genericErrorText);
+            } 
 
             // If the upload is successful, resolve the upload promise with an object containing
             // at least the "default" URL, pointing to the image on the server.
