@@ -175,6 +175,26 @@ ClassicEditor.defaultConfig = {
 			'tableCellProperties'
 		]
 	},
+	link: {
+		decorators: {
+			isExternal: {
+				mode: 'manual',
+				label: 'Open in a new tab',
+				attributes: {
+					target: '_blank'
+				}
+			},
+			isAnchor: {
+				mode: 'manual',
+				label: 'Is Anchor',
+				linkFoo: true,
+				attributes: {
+					id: 'linkHref',
+					name: 'url'
+				}
+			}
+		}
+	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };
