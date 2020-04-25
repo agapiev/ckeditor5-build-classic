@@ -54,16 +54,13 @@ export default class CrmUploadAdapter {
         xhr.addEventListener('abort', () => reject());
         xhr.addEventListener('load', () => {
             const response = xhr.response;
-
-            // This example assumes the XHR server's "response" object will come with
-            // an "error" which has its own "message" that can be passed to reject() in the upload promise.
-            
-            console.error('ERORR:CKEKUPLOAD',response);
-            if(response && response.message) {
-                return reject(response.message);
-            } else {
-                return reject(genericErrorText);
-            } 
+ 
+            if (!response || response.error || response.exceptionMessage) {
+                if(response.exceptionMessage) {
+                    return reject(response.message);
+                }
+                return reject(response && response.error ? response.error.message : genericErrorText);
+            }
 
             // If the upload is successful, resolve the upload promise with an object containing
             // at least the "default" URL, pointing to the image on the server.
