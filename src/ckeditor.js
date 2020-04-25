@@ -23,7 +23,34 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
+import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
+
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
+
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
+import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency';
+import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext';
+import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
+
 
 // import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 // import { getData } from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
@@ -49,6 +76,8 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	ImageResize,
+	ImageTextAlternative,
 	Indent,
 	Link,
 	List,
@@ -57,7 +86,30 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
+	TableProperties,
+	TableCellProperties,
 	TextTransformation,
+
+	Underline,
+	Strikethrough,
+	Code,
+	Subscript,
+	Superscript,
+
+	FontColor,
+	FontBackgroundColor,
+
+	Alignment,
+
+	HorizontalLine,
+
+	RemoveFormat,
+
+	SpecialCharacters,
+	SpecialCharactersEssentials,
+	SpecialCharactersCurrency,
+	SpecialCharactersMathematical,
+	SpecialCharactersText,
 
 	CrmUploadPlugin,
 	CrmFileExplorerPlugin
@@ -69,14 +121,26 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
+			'alignment',
 			'bold',
 			'italic',
+			'underline',
 			'link',
+			'strikethrough',
+			'code',
+			'subscript',
+			'superscript',
+			'horizontalLine',
+			'specialcharacters',
+			'removeFormat',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'|',
 			'indent',
 			'outdent',
+			'|',
+			'fontcolor',
+			'fontbackgroundcolor',
 			'|',
 			'imageUpload',
 			'fileExplorer',
@@ -87,20 +151,55 @@ ClassicEditor.defaultConfig = {
 			'redo'
 		]
 	},
+	heading: {
+		options: [
+			{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+			{ model: 'heading3', view: 'h3', title: 'Title', class: 'ck-heading_heading3' },
+			{ model: 'heading4', view: 'h4', title: 'Subtitle', class: 'ck-heading_heading4' }
+		]
+	},
 	image: {
 		toolbar: [
+			'imageStyle:alignLeft',
 			'imageStyle:full',
-			'imageStyle:side',
+			'imageStyle:alignRight',
 			'|',
 			'imageTextAlternative'
+		],
+		styles: [
+			'full',
+			'alignLeft',
+			'alignRight'
 		]
 	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
+			'mergeTableCells',
+			'tableProperties',
+			'tableCellProperties'
 		]
+	},
+	link: {
+		decorators: {
+			isExternal: {
+				mode: 'manual',
+				label: 'Open in a new tab',
+				attributes: {
+					target: '_blank'
+				}
+			},
+			isAnchor: {
+				mode: 'manual',
+				label: 'Is Anchor',
+				linkFoo: true,
+				attributes: {
+					id: 'linkHref',
+					name: 'url'
+				}
+			}
+		}
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
