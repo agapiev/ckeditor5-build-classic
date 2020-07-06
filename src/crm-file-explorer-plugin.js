@@ -1,6 +1,7 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import uploadIcon from './icons/upload.svg';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
+import 'custom-event-polyfill';
 
 export default class CrmFileExporerPlugin extends Plugin {
   init() {
@@ -18,7 +19,8 @@ export default class CrmFileExporerPlugin extends Plugin {
       // Callback executed once the icon is clicked
       view.on('execute', () => {
          // fire a JS event
-         window.dispatchEvent(new Event('open-crm-file-explorer'));
+         var evt = new CustomEvent("open-crm-file-explorer", { detail: { editor : editor }});
+         window.dispatchEvent(evt);
       });
 
       return view;
