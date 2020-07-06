@@ -1,8 +1,3 @@
-/**
- * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
- */
-
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
@@ -56,6 +51,13 @@ import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/sr
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext';
 import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
 
+
+// import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
+// import { getData } from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
+
+import CrmUploadPlugin from './crm-upload-plugin';
+import CrmFileExplorerPlugin from './crm-file-explorer-plugin';
+
 export default class ClassicEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
@@ -107,7 +109,10 @@ ClassicEditor.builtinPlugins = [
 	SpecialCharactersEssentials,
 	SpecialCharactersCurrency,
 	SpecialCharactersMathematical,
-	SpecialCharactersText
+	SpecialCharactersText,
+
+	CrmUploadPlugin,
+	CrmFileExplorerPlugin
 ];
 
 // Editor configuration.
@@ -138,6 +143,7 @@ ClassicEditor.defaultConfig = {
 			'fontbackgroundcolor',
 			'|',
 			'imageUpload',
+			'fileExplorer',
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
@@ -174,6 +180,26 @@ ClassicEditor.defaultConfig = {
 			'tableProperties',
 			'tableCellProperties'
 		]
+	},
+	link: {
+		decorators: {
+			isExternal: {
+				mode: 'manual',
+				label: 'Open in a new tab',
+				attributes: {
+					target: '_blank'
+				}
+			},
+			isAnchor: {
+				mode: 'manual',
+				label: 'Is Anchor',
+				linkFoo: true,
+				attributes: {
+					id: 'linkHref',
+					name: 'url'
+				}
+			}
+		}
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'

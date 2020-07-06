@@ -16,6 +16,7 @@ const TerserPlugin = require( 'terser-webpack-plugin' );
 module.exports = {
 	devtool: 'source-map',
 	performance: { hints: false },
+	mode:'development',
 
 	entry: path.resolve( __dirname, 'src', 'ckeditor.js' ),
 
