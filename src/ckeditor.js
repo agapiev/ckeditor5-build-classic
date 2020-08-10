@@ -182,10 +182,12 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	link: {
+		addTargetToExternalLinks: true,
 		decorators: {
 			isExternal: {
 				mode: 'manual',
 				label: 'Open in a new tab',
+				defaultValue: true,
 				attributes: {
 					target: '_blank'
 				}
