@@ -15,6 +15,8 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
@@ -37,11 +39,7 @@ import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
 
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
-
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
-
-import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
-import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
 
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
@@ -182,14 +180,14 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	link: {
-		addTargetToExternalLinks: true,
 		decorators: {
-			isExternal: {
+			openInNewTab: {
 				mode: 'manual',
 				label: 'Open in a new tab',
 				defaultValue: true,
 				attributes: {
-					target: '_blank'
+					target: '_blank',
+					rel: 'noopener noreferrer'
 				}
 			},
 			isAnchor: {
