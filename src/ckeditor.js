@@ -53,7 +53,6 @@ import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-character
 // import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 // import { getData } from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
 
-import CrmUploadPlugin from './crm-upload-plugin';
 import CrmFileExplorerPlugin from './crm-file-explorer-plugin';
 
 export default class ClassicEditor extends ClassicEditorBase { }
@@ -109,7 +108,6 @@ ClassicEditor.builtinPlugins = [
 	SpecialCharactersMathematical,
 	SpecialCharactersText,
 
-	CrmUploadPlugin,
 	CrmFileExplorerPlugin
 ];
 
