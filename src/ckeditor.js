@@ -111,6 +111,7 @@ ClassicEditor.builtinPlugins = [
 	CrmFileExplorerPlugin
 ];
 
+
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
@@ -157,15 +158,15 @@ ClassicEditor.defaultConfig = {
 	image: {
 		toolbar: [
 			'imageStyle:alignLeft',
-			'imageStyle:full',
+			'imageStyle:alignCenter',
 			'imageStyle:alignRight',
 			'|',
 			'imageTextAlternative'
 		],
 		styles: [
-			'full',
 			'alignLeft',
-			'alignRight'
+			'alignCenter',
+			'alignRight',
 		]
 	},
 	table: {
