@@ -10,13 +10,16 @@ import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
+
 import Image from '@ckeditor/ckeditor5-image/src/image';
+import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
-import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageTextAlternative from '@ckeditor/ckeditor5-image/src/imagetextalternative';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
@@ -77,6 +80,7 @@ ClassicEditor.builtinPlugins = [
 	ImageTextAlternative,
 	Indent,
 	Link,
+	LinkImage,
 	List,
 	MediaEmbed,
 	Paragraph,
@@ -161,7 +165,9 @@ ClassicEditor.defaultConfig = {
 			'imageStyle:alignCenter',
 			'imageStyle:alignRight',
 			'|',
-			'imageTextAlternative'
+			'imageTextAlternative',
+			'|',
+			'linkImage'
 		],
 		styles: [
 			'alignLeft',
