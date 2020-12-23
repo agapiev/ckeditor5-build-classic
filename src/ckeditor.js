@@ -52,7 +52,6 @@ import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/sr
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext';
 import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical';
 
-
 // import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 // import { getData } from '@ckeditor/ckeditor5-engine/src/dev-utils/model';
 
